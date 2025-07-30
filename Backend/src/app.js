@@ -4,7 +4,9 @@ const aiRoutes = require('./routes/ai.routes');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: ['https://ai-code-review-beige-seven.vercel.app'], 
+              methods: ['GET ', ' POST'], 
+              credentials: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
